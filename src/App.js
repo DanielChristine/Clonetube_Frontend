@@ -1,31 +1,27 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+      mystate: []
+    }
+  }
 
-      <iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  frameborder="0"></iframe>
+  render() {
+  return (
+    <div className='main'>
+     
+     <iframe title= "myFrame"
+              id="ytplayer"
+              type="text/jsx"
+              width="800"
+              height="400"
+              src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1"
+              frameBorder="0"
+            ></iframe>
 
     </div>
   );
-}
-
-export default App;
+}}
