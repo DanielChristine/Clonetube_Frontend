@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.scss';
-import Button from 'react-bootstrap/Button';
+import '../App.scss';
 
 class CommentForm extends Component {
 

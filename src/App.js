@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./Navbar";
-import CommentForm from "./CommentForm";
+import Navbar from "./components/Navbar";
+import CommentForm from "./components/CommentForm";
+import SearchBox from "./components/SearchBox";
 
 export default class App extends Component {
   constructor(props) {
@@ -30,6 +31,9 @@ export default class App extends Component {
         </div>
         <div className="commentFrame">
           <CommentForm />
+        </div>
+        <div className="searchBar">
+          <SearchBox searchAsyouType={false} />
         </div>
       </div>
     );
