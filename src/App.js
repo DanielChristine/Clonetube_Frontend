@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
-import CommentForm from "./components/CommentForm";
-import SearchBox from "./components/SearchBox";
+import Navbar from "./Components/Navbar";
+import CommentForm from "./Components/CommentForm";
+import Search from "./Components/SearchBox";
+import VPlayer from "./Components/VPlayer";
 
 export default class App extends Component {
   constructor(props) {
@@ -15,26 +16,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="main">
-        <div className="header">
-          <Navbar />
-        </div>
-        <div className="bigplayer">
-          <iframe
-            title="myFrame"
-            id="ytplayer"
-            type="text/jsx"
-            width="800"
-            height="400"
-            src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1"
-            frameBorder="none"
-          ></iframe>
-        </div>
-        <div className="commentFrame">
-          <CommentForm />
-        </div>
-        <div className="searchBar">
-          <SearchBox searchAsyouType={false} />
-        </div>
+        <Navbar />
+
+        <VPlayer />
+
+        <CommentForm />
+
+        <SearchBox searchAsyouType={false} />
       </div>
     );
   }

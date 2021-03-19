@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.scss";
 
 class Navbar extends Component {
   render() {
     return (
-      <div classname="navbar">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="#">
+      <div className="navbar">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+          <a className="navbar-brand" href="#">
             Clonetube Takeover!
           </a>
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
+          <div className="collapse navbar-collapse" id="navbarColor01">
+            <ul className="navbar-nav mr-auto">
               <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search" />
+                
                   <button type="submit" size="md">
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                     <p>Go</p>
                   </button>
               </form>
