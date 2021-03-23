@@ -4,12 +4,13 @@ import Navbar from "./Components/Navbar";
 import CommentForm from "./Components/CommentForm";
 import Search from "./Components/SearchBox";
 import VPlayer from "./Components/VPlayer";
+import axios from "axios";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mystate: [],
+      mystate: []
     };
   }
 
@@ -21,8 +22,6 @@ export default class App extends Component {
         <VPlayer />
 
         <CommentForm />
-
-        <SearchBox searchAsyouType={false} />
       </div>
     );
   }

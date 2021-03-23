@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Search from './SearchBox'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class Navbar extends Component {
@@ -11,14 +12,7 @@ class Navbar extends Component {
           </a>
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav mr-auto">
-              <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search" />
-                
-                  <button type="submit" size="md">
-                    <i className="fa fa-search"></i>
-                    <p>Go</p>
-                  </button>
-              </form>
+              <Search />
             </ul>
           </div>
         </nav>
@@ -26,5 +20,4 @@ class Navbar extends Component {
     );
   }
 }
-
 export default Navbar;
