@@ -1,56 +1,34 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from 'axios';
 
-class Navbar extends Component {
-  constructor(props){
-    super(props);  
-  this.state = {
-    response: ""
+class Navbar extends React.Component {
+  handleChange = (event) => {
+    this.setState({
+      ternm: event.target.value,
+    });
   };
-}
-
-  // handleOnChange = (e) => {
-  //   console.log("event", e.target.value);
-  //   this.setState({
-  //     searchTerm: e.target.value,
-  //   });
-  // };
-
-  /* handleSubmit = async function (event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search?q=${this.target.value}&key=AIzaSyAdw1bj67vUatA4S2jskQYyc31L4Fm4S1w"
-      );
-      console.log("Returned data:", response);
-      //put response into state
-      //break response apart to get video id, put THAT into state
-    } catch (err) {
-      console.log(`Axios request failed: ${err}`);
-    }
-  }; */
+    this.props.handleFormSubmit(this.state.term);
+  };
 
   render() {
     return (
-      <div className="navbar">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand">
-            Clonetube Takeover!
-          </a>
-          <div className="collapse navbar-collapse" id="navbarColor01">
-            <ul className="navbar-nav mr-auto"></ul>
-          </div>
-        </nav>
-        <form onSubmit={(event) => this.props.handleSubmit(event)}>
-          <input
-            value={this.state.searchTerm}
-            onChange={(event) => this.props.handleOnChange(event)}
-            placeholder="Search videos!"
-          />
-          <button type="submit">fetchVideos</button>
-        </form>
-      </div>
+      <>
+        <div className="search-bar ui segment">
+          <form onSubmit={this.handleSubmit} className="ui form">
+            <div className="field">
+              <label htmlFor="video-search">Video Search</label>
+              <input
+                onChange={this.handleChange}
+                name="video-search"
+                type="text"
+                placeholder="Search.."
+              />
+            </div>
+          </form>
+        </div>
+      </>
     );
   }
 }
