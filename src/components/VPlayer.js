@@ -11,7 +11,7 @@ class VPlayer extends Component {
           type="text/jsx"
           width="800"
           height="400"
-          src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1"
+          src="https://www.youtube.com/embed/${this.props.videoid}?autoplay=0"
           frameBorder="none"
         ></iframe>
       </div>
