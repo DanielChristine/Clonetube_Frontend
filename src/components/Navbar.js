@@ -17,7 +17,7 @@ class Navbar extends Component {
   //   });
   // };
 
-  handleSubmit = async function (event) {
+  /* handleSubmit = async function (event) {
     event.preventDefault();
     try {
       const response = await axios.get(
@@ -29,7 +29,7 @@ class Navbar extends Component {
     } catch (err) {
       console.log(`Axios request failed: ${err}`);
     }
-  };
+  }; */
 
   render() {
     return (
@@ -42,7 +42,7 @@ class Navbar extends Component {
             <ul className="navbar-nav mr-auto"></ul>
           </div>
         </nav>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <form onSubmit={(event) => this.props.handleSubmit(event)}>
           <input
             value={this.state.searchTerm}
             onChange={(event) => this.props.handleOnChange(event)}
