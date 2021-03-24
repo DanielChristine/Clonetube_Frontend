@@ -1,26 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Navbar";
 import CommentForm from "./Components/CommentForm";
 import VPlayer from "./Components/VPlayer";
-import axios from "axios";
 import clonetube from "./Api/clonetube";
+import SearchList from "./Components/SearchList";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: "",
-      videoid: "",
-    };
+class App extends React.Component {
+  state = {
+    videos: [],
+    selectedVideo: null
   }
-
-  handleOnChange = (e) => {
-    console.log("event", e.target.value);
-    this.setState({
-      searchTerm: e.target.value,
-    });
-  };
 
   handleSubmit = async (termFromSearchBar) => {
     const response = await clonetube.get("/search", {
@@ -35,18 +25,27 @@ export default class App extends Component {
     console.log("this is resp", response);
   };
 
+  handleVideoSelect = (video) => {
+    this.setState({selectedVideo: video})
+  }
+
   render() {
     return (
-      <div className="main">
-        <Navbar
-          handleOnChange={(event) => this.handleOnChange(event)}
-          //handleSubmit={(event) => this.handleSubmit(event)}
-        />
-
-        <VPlayer {...this.state.videoid} />
-
-        <CommentForm />
+      <div className='ui container' style={{marginTop: '1em'}}>
+        <Navbar handleFormSubmit={this.handleSubmit}/>
+        <div className='ui grid'>
+          <div className='ui row'>
+            <div className="eleven wide column">
+              <VPlayer video={this.state.selectedVideo}/>
+            </div>
+            <div className="five wide column">
+              <SearchList handleVideoSelect ={this.handleVideoSelect} videos={this.state.videos}/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+export default App;
