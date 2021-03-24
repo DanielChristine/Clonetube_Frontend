@@ -8,11 +8,8 @@ const VPlayer = ({ video }) => {
         <br></br>
         <p style={{ fontSize: "25px" }}>
           Use the API to search for videos matching specific search terms,
-          topics, locations, publication dates, and much more. The APIs
-          search.list method also supports searches for playlists and channels.
-          With the YouTube Data API, you can add a variety of YouTube features
-          to your application. Use the API to upload videos, manage playlists
-          and subscriptions, update channel settings, and more.
+          topics, locations, publication dates, and much more!! The APIs
+          search.list method also supports searches for playlists and channels!!
         </p>
       </div>
     );
