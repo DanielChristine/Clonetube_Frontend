@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 
 class Navbar extends React.Component {
   handleChange = (event) => {
     this.setState({
-      ternm: event.target.value,
+      term: event.target.value,
     });
   };
   handleSubmit = (event) => {

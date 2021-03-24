@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/video.css";
 
 const Video = ({ video, handleVideoSelect }) => {
   return (
@@ -9,10 +10,9 @@ const Video = ({ video, handleVideoSelect }) => {
         alt={video.snippet.description}
       />
       <div className="content">
-        <div className="header">{video.snippet.title}</div>
+        <div className="header ">{video.snippet.title}</div>
       </div>
     </div>
   );
 };
-
 export default Video;
